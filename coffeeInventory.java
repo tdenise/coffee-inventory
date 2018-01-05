@@ -1,8 +1,12 @@
-import java.io.*;
 import java.util.*;
-public class coffeeInventory{
+public class coffeeInventory {
     public static void main(String[] args){
-        Scanner reader = new Scanner(new File("shipments.txt"));
+        try {
+            File file = new File("shipments.txt");
+        } catch (Exception e){
+            System.out.println("RIP");
+        }
+        Scanner reader = new Scanner(file);
         ArrayList<Integer> incoming = new ArrayList<Integer>();
         ArrayList<Integer> outgoing = new ArrayList<Integer>();
         int n;
@@ -14,7 +18,6 @@ public class coffeeInventory{
                 incoming.add(n);
             }
         }
-		
         System.out.println("Incoming: ");
         for(int i = 0; i < incoming.size(); i++){
             System.out.println(incoming.get(i));
@@ -29,13 +32,14 @@ public class coffeeInventory{
         }
         for(int i = 0; i < outgoing.size();i++){
             outgoingTotal += outgoing.get(i);
-        }   
+        }
         total = incomingTotal + outgoingTotal;
         System.out.println("Total: " + total);
         if(total < 0){
             System.out.println("Today was a stock loss");
         }else{
-        System.out.println("Today was a stock gain");
+            System.out.println("Today was a stock gain");
         }
-     }
+    }
 }
+
