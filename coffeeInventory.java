@@ -14,6 +14,7 @@ public class coffeeInventory{
                 incoming.add(n);
             }
         }
+		
         System.out.println("Incoming: ");
         for(int i = 0; i < incoming.size(); i++){
             System.out.println(incoming.get(i));
