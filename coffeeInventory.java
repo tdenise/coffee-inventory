@@ -2,22 +2,28 @@ import java.util.*;
 import java.io.*;
 public class coffeeInventory {
     public static void main(String[] args){
-        try {
-            File file = new File("shipments.txt");
-        } catch (Exception e){
-            System.out.println("RIP");
-        }
-        Scanner reader = new Scanner(file);
-        ArrayList<Integer> incoming = new ArrayList<Integer>();
+        
+                ArrayList<Integer> incoming = new ArrayList<Integer>();
         ArrayList<Integer> outgoing = new ArrayList<Integer>();
         int n;
-        while(reader.hasNext()){
+        
+                    File file = new File("shipments.txt");
+        try {
+
+            Scanner reader = new Scanner(file);
+                    while(reader.hasNext()){
             n = reader.nextInt();
             if(n < 0){
                 outgoing.add(n);
             } else {
                 incoming.add(n);
             }
+        } catch (Exception e){
+            System.out.println("RIP");
+        }
+        
+
+
         }
         System.out.println("Incoming: ");
         for(int i = 0; i < incoming.size(); i++){
