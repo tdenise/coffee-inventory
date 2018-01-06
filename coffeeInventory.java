@@ -1,5 +1,5 @@
 /*
- * Authors: Ryan Demilt, Lei Pei, Denise Tran
+ * Authors: Ryan DeMilt, Lei Pei, Denise Tran
  * CS 141-1
  */
 
@@ -22,6 +22,7 @@ import java.io.*;
 public class coffeeInventory {
     public static void main(String[] args){
         
+    	//create array lists incoming and outgoing
         ArrayList<Integer> incoming = new ArrayList<Integer>();
         ArrayList<Integer> outgoing = new ArrayList<Integer>();
         int n;
@@ -29,22 +30,20 @@ public class coffeeInventory {
         File file = new File("shipments.txt");
        
         try {
-
             Scanner reader = new Scanner(file);
                     while(reader.hasNext()){
-            n = reader.nextInt();
-            if(n < 0){
-                outgoing.add(n);
-            } else {
-                incoming.add(n);
-            }
+                    	n = reader.nextInt();
+                        if(n < 0){
+                            outgoing.add(n);
+                        } else {
+                            incoming.add(n);
+                        }
+                    }                                          
         } catch (Exception e){
             System.out.println("RIP");
         }
         
-
-
-        }
+        
         System.out.println("Incoming: ");
         for(int i = 0; i < incoming.size(); i++){
             System.out.println(incoming.get(i));
@@ -69,4 +68,3 @@ public class coffeeInventory {
         }
     }
 }
-
