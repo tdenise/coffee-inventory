@@ -1,13 +1,33 @@
+/*
+ * Authors: Ryan Demilt, Lei Pei, Denise Tran
+ * CS 141-1
+ */
+
+/*
+ * coffee shipment inventory: This program calculates whether the company has lost stock 
+ * or gained stock.
+ * 
+ * 1)Takes input in the form of a file named "shipments.txt" with random positive/negative values
+ * 2)Sorts positive numbers into an array aka incoming
+ * 	 and sorts negative numbers into an array aka outgoing 
+ * 3)Displays incoming and outgoing arrays separately
+ * 4)Then adds the two sets of numbers(incoming, outgoing) together.
+ * 5)Displays the combined values of incoming and outgoing.
+ * 6)Tells user if the company gained or lost stock.
+ * 
+ */
+
 import java.util.*;
 import java.io.*;
 public class coffeeInventory {
     public static void main(String[] args){
         
-                ArrayList<Integer> incoming = new ArrayList<Integer>();
+        ArrayList<Integer> incoming = new ArrayList<Integer>();
         ArrayList<Integer> outgoing = new ArrayList<Integer>();
         int n;
         
-                    File file = new File("shipments.txt");
+        File file = new File("shipments.txt");
+       
         try {
 
             Scanner reader = new Scanner(file);
